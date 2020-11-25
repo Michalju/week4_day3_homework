@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <table class="styled-table">
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Publisher</th>
+            <th>Author Id</th>
+            <th>Author Name</th>
+        </tr>
+    {% for book in books %}
+        <tr>
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.genre}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.author.id}}</td>
+            <td>{{book.author.first_name}} {{book.author.last_name}}</td>
+         </tr> 
+    {% endfor %}
+    </table>
+{% endblock %}

@@ -8,12 +8,16 @@
   <title>My Book List</title>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul class="menu">
-        <li><a href="#">Your Nav Goes Here</a></li>
-      </ul>
-    </nav>
+  <header class=navigation_top>
+    <!-- Our header content will go here -->                  
+    <nav>     
+        <!-- Our links will go here -->
+        <h2>Library</h2>
+        <ul >
+          <li><a href="/">Home</a></li>    
+          <li><a href="/books">Books list</a></li> 
+        </ul>
+    </nav>     
   </header>
   <div class="container">
     {% block content %}
