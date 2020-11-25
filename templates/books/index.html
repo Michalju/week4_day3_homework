@@ -9,6 +9,7 @@
             <th>Publisher</th>
             <th>Author Id</th>
             <th>Author Name</th>
+            <th>Action</th>
         </tr>
     {% for book in books %}
         <tr>
@@ -18,6 +19,13 @@
             <td>{{book.publisher}}</td>
             <td>{{book.author.id}}</td>
             <td>{{book.author.first_name}} {{book.author.last_name}}</td>
+            <td>
+                <form action="/books/delete" method="post">
+                    <input type="hidden" name="book_id" value="{{book.id}}">
+                    <button type="submit">Delete</button>
+                </form>
+
+            </td>
          </tr> 
     {% endfor %}
     </table>

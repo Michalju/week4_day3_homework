@@ -34,4 +34,7 @@ def get_books():
 
 # DELETE
 # DELETE '/books/<id>'
-
+@books_blueprint.route("/books/delete", methods=["POST"])
+def delete_task():
+    book_repository.delete(request.form['book_id'])
+    return redirect('/books')
