@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- form -->
+<table class="styled-table">
+    <tr>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Publisher</th>
+        <th>Author Name</th>
+        <th>Action</th>
+    </tr>
+    <form action="/books" method="post">
+    <tr>
+        <td>
+            <input type="text" 
+            name="title" 
+            placeholder ="Title"
+            required
+            autofocus>
+        </td>
+        <td>
+            <input type="text" 
+            name="genre" 
+            placeholder ="Genre"
+            required>
+        </td>
+        <td>
+            <input type="text" 
+            name="publisher" 
+            placeholder ="Publisher"
+            required>
+        </td>
+        <td>
+            <select name="author_id">
+                {% for author in authors %}
+                    <option value="{{author.id}}">{{author.first_name}} {{author.last_name}}</option>
+                {% endfor%}
+            </select>
+        </td>
+        <td>
+            <button type="submit">Add book</button>
+        </td>
+     </tr> 
+</table>
+{% endblock %}

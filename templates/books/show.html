@@ -11,7 +11,6 @@
             <th>Author Name</th>
             <th>Action</th>
         </tr>
-    {% for book in books %}
         <tr>
             <td>{{book.id}}</td>
             <td>{{book.title}}</td>
@@ -24,12 +23,7 @@
                     <input type="hidden" name="book_id" value="{{book.id}}">
                     <button type="submit">Delete</button>
                 </form>
-                <form action="/books/show" method="post">
-                    <input type="hidden" name="book_id" value="{{book.id}}">
-                    <button type="submit">Show Details</button>
-                </form>
             </td>
          </tr> 
-    {% endfor %}
     </table>
 {% endblock %}
