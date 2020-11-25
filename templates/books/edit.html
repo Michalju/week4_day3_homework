@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+    
+    <table class="styled-table">
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Publisher</th>
+            <th>Author Name</th>
+            <th>Action</th>
+        </tr>
+        <form action="/books/update" method="post">
+        <input type="hidden" name="book_id" value={{book.id}}>
+        <tr>
+            <td>
+                <input type="text" 
+                name="title" 
+                placeholder ="Title"
+                value = "{{book.title}}"
+                required
+                autofocus>
+            </td>
+            <td>
+                <input type="text" 
+                name="genre" 
+                placeholder ="Genre"
+                value = "{{book.genre}}"                
+                required>
+            </td>
+            <td>
+                <input type="text" 
+                name="publisher" 
+                placeholder ="Publisher"
+                value = "{{book.publisher}}"                  
+                required>
+            </td>
+            <td>
+                <select name="author_id">
+                    {% for author in authors %}
+                        {% if book.author.id == author.id %}
+
+                            <option value="{{author.id}}" selected>{{author.first_name}} {{author.last_name}}</option>
+                        {% else %}
+                            <option value="{{author.id}}">{{author.first_name}} {{author.last_name}}</option>
+                        {% endif %}
+                    {% endfor%}
+                </select>
+            </td>
+            <td>
+                <button type="submit">Update book</button>
+            </td>
+         </tr> 
+    </table>
+{% endblock %}

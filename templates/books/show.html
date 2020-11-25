@@ -23,6 +23,10 @@
                     <input type="hidden" name="book_id" value="{{book.id}}">
                     <button type="submit">Delete</button>
                 </form>
+                <form action="/books/edit" method="post">
+                    <input type="hidden" name="book_id" value="{{book.id}}">
+                    <button type="submit">Edit</button>
+                </form>
             </td>
          </tr> 
     </table>
